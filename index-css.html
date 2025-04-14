@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotate Video Test - CSS</title>
+</head>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    height: -webkit-fill-available;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100lvh;
+    background: black;
+  }
+
+  .fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 9999;
+  }
+
+</style>
+
+<body>
+  <h1>Rotate Video Test</h1>
+  <p>Rotate phone to see video in fullscreen landscape, and rotate back to portrait to view it inline.</p>
+  <video id="video" src="video.mp4" width="100%" controls loop playsinline autoplay></video>
+  <hr>
+  <p><a href="index.html">Go to Javascript version.</a></p>
+
+  <script>
+    screen.orientation.addEventListener('change', function (e) {
+      if (screen.orientation.type === 'landscape-primary' || screen.orientation.type === 'landscape-secondary') {
+        document.getElementById("video").classList.add('fullscreen');
+        document.body.classList.add('no-scroll');
+      } else {
+        document.getElementById("video").classList.remove('fullscreen');
+        document.body.classList.remove('no-scroll');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
