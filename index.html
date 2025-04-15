@@ -5,15 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rotate Video Test - JS</title>
+
+  <style>
+    body {
+      margin-left: auto;
+      margin-right: auto;
+      width: 20em;
+      font-family: sans-serif;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Rotate Video Test</h1>
-  <p>Rotate phone to switch to fullscreen landscape 'properly'. But, when rotating back to portrait, can't exit
-    fullscreen programatically, and when the user exits it will pause the video.</p>
-  <video id="video" src="video.mp4" width="100%" controls loop playsinline autoplay></video>
+  <p><s>Rotate phone to switch to fullscreen landscape 'properly'. But, when rotating back to portrait, can't exit
+    fullscreen programatically, and when the user exits it will pause the video.</s></p>
+  <p>While this was working on the iOS simulator (see below), it does not seem to work on a real device!  Try the <a href="index-css.html">CSS version</a> instead.</p>
+  <video id="video" src="video.mp4#t=0.1" width="100%" controls loop playsinline autoplay></video>
   <hr>
-  <p><a href="index-css.html">Go to CSS version.</a></p>
+  <p><a href="index-css.html">CSS version</a></p>
+  <hr>
+  <video id="video" src="simulator-demo.mp4#t=0.1" width="100%" controls playsinline></video>
 
   <script>
     screen.orientation.addEventListener('change', function (e) {

@@ -12,6 +12,10 @@
   body {
     height: 100%;
     height: -webkit-fill-available;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    font-family: sans-serif;
   }
 
   .no-scroll {
@@ -35,9 +39,9 @@
 <body>
   <h1>Rotate Video Test</h1>
   <p>Rotate phone to see video in fullscreen landscape, and rotate back to portrait to view it inline.</p>
-  <video id="video" src="video.mp4" width="100%" controls loop playsinline autoplay></video>
+  <video id="video" src="video.mp4#t=0.1" width="100%" controls loop playsinline autoplay></video>
   <hr>
-  <p><a href="index.html">Go to Javascript version.</a></p>
+  <p><a href="index.html">JavaScript version</a></p>
 
   <script>
     screen.orientation.addEventListener('change', function (e) {
